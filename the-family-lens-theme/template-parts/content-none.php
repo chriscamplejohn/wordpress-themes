@@ -1,0 +1,1 @@
+<div class="not-found"><h2><?php esc_html_e('Nothing found', 'the-family-lens'); ?></h2><p><?php esc_html_e('No stories matched this view yet. Try a search or explore another section.', 'the-family-lens'); ?></p><?php get_search_form(); ?></div>

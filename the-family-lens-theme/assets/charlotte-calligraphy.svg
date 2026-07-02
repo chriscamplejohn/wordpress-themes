@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="260" viewBox="0 0 820 260" role="img" aria-label="Charlotte">
+  <defs>
+    <filter id="softInk" x="-4%" y="-10%" width="108%" height="125%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.08" numOctaves="2" seed="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.65" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="820" height="260" fill="transparent"/>
+  <text x="28" y="162"
+        fill="#007274"
+        font-family="Segoe Script, Brush Script MT, Lucida Handwriting, Snell Roundhand, cursive"
+        font-size="132"
+        font-style="italic"
+        font-weight="400"
+        letter-spacing="-5"
+        filter="url(#softInk)">Charlotte</text>
+  <path d="M64 190 C 170 220, 370 220, 648 184"
+        fill="none"
+        stroke="#007274"
+        stroke-width="7"
+        stroke-linecap="round"
+        opacity="0.82"/>
+</svg>
