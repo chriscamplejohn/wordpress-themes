@@ -30,19 +30,19 @@ $lead_url = $lead_post ? get_permalink($lead_post) : home_url('/start-here/');
 <section class="front-cover front-cover-stacked">
     <div class="cover-label"><span><?php esc_html_e('Issue 01', 'the-family-lens'); ?></span><span><?php esc_html_e('Modern family life, considered slowly', 'the-family-lens'); ?></span></div>
     <article class="lead-story">
+        <figure class="hero-image">
+            <?php if ($lead_post && has_post_thumbnail($lead_post)) : ?>
+                <?php echo get_the_post_thumbnail($lead_post, 'family-lens-hero'); ?>
+            <?php else : ?>
+                <img src="<?php echo family_lens_asset('family-lens-hero-photo.png'); ?>" alt="<?php esc_attr_e('A calm family moment connected to the lead story', 'the-family-lens'); ?>">
+            <?php endif; ?>
+            <?php if ($lead_post) : ?><figcaption><?php esc_html_e('Lead feature', 'the-family-lens'); ?></figcaption><?php endif; ?>
+        </figure>
         <p class="kicker"><?php esc_html_e('Lead story', 'the-family-lens'); ?></p>
         <h1><?php echo esc_html($lead_title); ?></h1>
         <p><?php echo esc_html($lead_excerpt); ?></p>
         <div class="actions"><a class="button" href="<?php echo esc_url($lead_url); ?>"><?php esc_html_e('Read the feature', 'the-family-lens'); ?></a><a href="<?php echo esc_url(home_url('/start-here/')); ?>" class="text-link"><?php esc_html_e('Start with the publication guide', 'the-family-lens'); ?></a></div>
     </article>
-    <figure class="hero-image">
-        <?php if ($lead_post && has_post_thumbnail($lead_post)) : ?>
-            <?php echo get_the_post_thumbnail($lead_post, 'family-lens-hero'); ?>
-        <?php else : ?>
-            <img src="<?php echo family_lens_asset('family-lens-hero-photo.png'); ?>" alt="<?php esc_attr_e('A calm family moment connected to the lead story', 'the-family-lens'); ?>">
-        <?php endif; ?>
-        <?php if ($lead_post) : ?><figcaption><?php esc_html_e('Lead feature', 'the-family-lens'); ?></figcaption><?php endif; ?>
-    </figure>
 </section>
 <section class="editor-letter"><div><p class="kicker"><?php esc_html_e('From the Editor', 'the-family-lens'); ?></p><h2><?php esc_html_e('A calm place to read, reflect and begin again.', 'the-family-lens'); ?></h2></div><div class="letter-copy"><p><?php esc_html_e('The Family Lens is not a feed to race through. It is a carefully curated publication for people who care about the texture of family life: the home, the learning, the walks, the worries, the discoveries and the small decisions that shape a week.', 'the-family-lens'); ?></p><p><?php esc_html_e('We will always choose clarity over noise, warmth over performance and useful questions over easy answers.', 'the-family-lens'); ?></p><img class="signature signature-image" src="<?php echo family_lens_asset('charlotte-signature-teal.png'); ?>" alt="Charlotte"></div></section>
 <section class="start-here"><div class="brush-rule"></div><p class="kicker"><?php esc_html_e('Start Here', 'the-family-lens'); ?></p><h2><?php esc_html_e('Find the doorway that matches the season you are in.', 'the-family-lens'); ?></h2><div class="start-grid"><article><span>01</span><h3><?php esc_html_e('New to The Family Lens?', 'the-family-lens'); ?></h3><p><?php esc_html_e('Begin with the publication guide, our values and the six editorial pillars.', 'the-family-lens'); ?></p></article><article><span>02</span><h3><?php esc_html_e('Looking for practical help?', 'the-family-lens'); ?></h3><p><?php esc_html_e('Choose Live, Learn or Thrive for grounded ideas you can use gently.', 'the-family-lens'); ?></p></article><article><span>03</span><h3><?php esc_html_e('Need perspective?', 'the-family-lens'); ?></h3><p><?php esc_html_e('Explore, Connect and Discover offer stories, places and recommendations worth slowing down for.', 'the-family-lens'); ?></p></article></div></section>
