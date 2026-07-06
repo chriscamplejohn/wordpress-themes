@@ -36,6 +36,8 @@ function family_lens_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'family_lens_excerpt_length');
 
+add_filter('get_the_archive_title_prefix', '__return_empty_string');
+
 function family_lens_asset($file) {
     return esc_url(get_template_directory_uri() . '/assets/' . ltrim($file, '/'));
 }
