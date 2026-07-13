@@ -36,7 +36,6 @@ $lead_url = $lead_post ? get_permalink($lead_post) : home_url('/start-here/');
             <?php else : ?>
                 <img src="<?php echo family_lens_asset('family-lens-hero-photo.png'); ?>" alt="<?php esc_attr_e('A calm family moment connected to the lead story', 'the-family-lens'); ?>">
             <?php endif; ?>
-            <?php if ($lead_post) : ?><figcaption><?php esc_html_e('Lead feature', 'the-family-lens'); ?></figcaption><?php endif; ?>
         </figure>
         <p class="kicker"><?php esc_html_e('Lead story', 'the-family-lens'); ?></p>
         <h1><?php echo esc_html($lead_title); ?></h1>
