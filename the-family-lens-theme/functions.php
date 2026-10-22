@@ -26,8 +26,8 @@ function family_lens_setup() {
 add_action('after_setup_theme', 'family_lens_setup');
 
 function family_lens_scripts() {
-    wp_enqueue_style('family-lens-style', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_script('family-lens-theme', get_template_directory_uri() . '/assets/theme.js', array(), '1.0.0', true);
+    wp_enqueue_style('family-lens-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
+    wp_enqueue_script('family-lens-theme', get_template_directory_uri() . '/assets/theme.js', array(), filemtime(get_template_directory() . '/assets/theme.js'), true);
 }
 add_action('wp_enqueue_scripts', 'family_lens_scripts');
 
