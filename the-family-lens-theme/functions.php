@@ -38,6 +38,29 @@ add_filter('excerpt_length', 'family_lens_excerpt_length');
 
 add_filter('get_the_archive_title_prefix', '__return_empty_string');
 
+function family_lens_register_edition() {
+    register_taxonomy('family_lens_edition', 'post', array(
+        'labels' => array(
+            'name' => __('Edition', 'the-family-lens'),
+            'singular_name' => __('Edition', 'the-family-lens'),
+        ),
+        'hierarchical' => true,
+        'public' => false,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+        'rewrite' => false,
+    ));
+}
+add_action('init', 'family_lens_register_edition');
+
+function family_lens_ensure_edition_term() {
+    if (!term_exists('this-edition', 'family_lens_edition')) {
+        wp_insert_term(__('This edition', 'the-family-lens'), 'family_lens_edition', array('slug' => 'this-edition'));
+    }
+}
+add_action('admin_init', 'family_lens_ensure_edition_term');
+
 function family_lens_asset($file) {
     return esc_url(get_template_directory_uri() . '/assets/' . ltrim($file, '/'));
 }
